@@ -1,8 +1,7 @@
-# React + Vite
+Steps:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1)select movie from given list.
+2)select the screen and seat no.
+3)after clicking on book the details will be shown.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Website Link - https://movieticketbook.netlify.app/
