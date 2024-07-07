@@ -21,24 +21,52 @@ let SCREENS = [
 
 const MOVIES = [
     {
-        id: 1,
-        title: "Munjya 2024",
+        id: 1   ,
+        title: "Munjya",
         image: "https://th.bing.com/th/id/OIP.g2d3nTNwcA4gwrpYQFVOWAHaLH?rs=1&pid=ImgDetMain",
+        gener: "Comedy/Horror",
     },
     {
         id: 2,
-        title: "Kalki 2024",
+        title: "Kalki",
         image: "https://images.vcinema.com/attachments/00350f30-b11c-11ee-a079-0a5d32a9e154-untitled-1-2.jpg",
+        gener: "Action/Sci-Fi/Thriller",
     },
     {
         id: 3,
-        title: "Furosia 2024",
+        title: "Furosia",
         image: "https://th.bing.com/th/id/OIP.gEGRlPxExCIK2FVZG-3BQwHaK-?rs=1&pid=ImgDetMain",
+        gener: "Action/Thriller",
     },
     {
         id: 4,
-        title: "Inside Out 2 2024",
+        title: "Inside Out 2",
         image: "https://media.wdwnt.com/2023/11/Inside-Out-2-poster.jpg",
+        gener: "Drama/Comedy",
+    },
+    {
+        id: 5,
+        title: "Chandu Champion",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSklWab2CIdBahXiMR-k40CbYqlK9DeqetPJA&s",
+        gener: "Biography/Sports",
+    },
+    {
+        id: 6,
+        title: "Decpicable Me 4",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2VcoH7lCbTj1uxRjs7UgF44EiHJhVR_szSw&s",
+        gener: "Comedy/Drama",
+    },
+    {
+        id: 7,
+        title: "A Quiet Place Day One",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO8PhVR1_LaYechw3qz2zv-Z_GTh4ioMiumA&s",
+        gener: "Thriller/Horror",
+    },
+    {
+        id: 8,
+        title: "Alyad Palyad",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK6ZjYc2kRQ6QB1s0RLqSXX7eI2Wu5cF6B-g&s",
+        gener: "Thriller/Horror",
     },
 ];
 
@@ -94,14 +122,17 @@ export default function MovieBooking() {
   return (
     <div>
     <header> <h1>Movie Booking App</h1></header>
+
+
         
-        <h2>Current Shows</h2>
+        <h2 className='title'>Recommended Movies</h2>
         <div className='movie-selection'>
             {
                 MOVIES.map((movie) => (
                     <div className='movie' key={movie.id} onClick={() => setSelectedMovie(movie)}>
                         <img className='movie-poster' src={movie.image} alt={movie.title} />
                         <div className='movie-title'>{movie.title}</div>
+                        <p className='movie-gener'>{movie.gener}</p>
                         </div>
                 ))
             }
@@ -109,7 +140,7 @@ export default function MovieBooking() {
       {
         selectedMovie && (
             <>
-            <h2>Select Screen</h2>
+            <h2 className='title'>Select Screen</h2>
             <div className='screen-selection'>
                 { 
                     SCREENS.map((screen) => {
@@ -177,7 +208,7 @@ export default function MovieBooking() {
     </div>
     </div>
     <button className='payment-button' onClick={handleBooking} disabled={!selectedScreen || selectedSeats?.length ===0}>
-        Book now
+        Pay Now
     </button>
     </div>
   );
